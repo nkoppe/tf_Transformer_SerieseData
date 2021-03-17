@@ -1,0 +1,2 @@
+# tf_Transformer_SerieseData
+時系列データに対するトランスフォーマーの適用と研究
