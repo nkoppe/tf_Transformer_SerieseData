@@ -63,9 +63,9 @@ if __name__ == '__main__':
     np.random.seed(123)
     tf.random.set_seed(123)
 
-    '''
-    1. データの準備
-    '''
+    """
+    データセット準備
+    """
     os.chdir(os.path.dirname(os.path.abspath(__file__)))    #カレントディレクトリをファイルの場所に設定
     data_dir = os.path.join(os.path.dirname(__file__), 'data')  #データディレクトリを取得
 
@@ -80,9 +80,9 @@ if __name__ == '__main__':
     valSet = ConvertWindowDataset(valData, 10, 100)
     testSet = ConvertWindowDataset(testData, 10, 1)
 
-    '''
-    2. モデルの構築
-    '''
+    """
+    モデル構築
+    """
     depth_x = 1     #入力する特徴量の数
     depth_t = 1     #出力する特徴量の数
 
@@ -94,9 +94,9 @@ if __name__ == '__main__':
                         d_ff=256,
                         maxlen=20)
 
-    '''
-    3. モデルの学習・評価
-    '''
+    """
+    学習処理
+    """
     criterion = tf.losses.CategoricalCrossentropy()
     optimizer = optimizers.Adam(learning_rate=0.001,
                                 beta_1=0.9, beta_2=0.999, amsgrad=True)
